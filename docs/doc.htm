@@ -1,0 +1,256 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DM MyBasic-Script</title></head>
+<STYLE TYPE="text/css">
+<!--
+BODY{
+scrollbar-arrow-color:#DFFFFF;
+scrollbar-highlight-color:#8FB7CF;
+scrollbar-face-color:#8FB7CF;
+scrollbar-3dlight-color:#DFFFFF;
+scrollbar-track-color:#DBECF7;
+scrollbar-darkshadow-color:#5D859D;
+scrollbar-shadow-color:#8FB7CF;
+}
+-->
+
+    A:active { text-decoration: underline }
+		A:link		{ color:#023AA1; text-decoration:none;}
+			A:visited	{ color:#023AA1; text-decoration:none;}
+					A:hover	{ color:#FF0000; text-decoration:underline;}
+</STYLE>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0033FF">
+<h1><font color="#990000"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a name="top"></a></font><font face="Georgia, Times New Roman, Times, serif" color="#45A0E4">DM 
+  MyBasic-Script</font></b></font> <font face="Verdana, Arial, Helvetica, sans-serif"><br>
+  </font></h1>
+<ul>
+  <li><font size="2" face="MS Sans Serif"><b><a href="#Intro">Intorduction</a></b></font></li>
+  <li><font size="2" face="MS Sans Serif"><b><a href="#Key">Keywords</a></b></font></li>
+  <li><font size="2" face="MS Sans Serif"><b><a href="#DataTypes">Data Types </a></b></font></li>
+  <li> 
+    <div align="left"><font size="2" face="MS Sans Serif"><b><a href="#Guide">Quick 
+      Guide Keywords</a></b></font></div>
+  </li>
+  <li><a href="#Run"><b><font face="MS Sans Serif" size="2">Running the scripts</font></b></a> 
+  </li>
+  <li> 
+    <div align="left"><a href="#NextVer"><font size="2" face="MS Sans Serif"><b>Next 
+      Version</b></font></a></div>
+    <hr size="1" align="left">
+    <div align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><a name="Intro"></a><b><font size="3">Intorduction</font></b> 
+      <a href="#top"><font size="1" face="Geneva, Arial, Helvetica, san-serif">Top</font></a><br>
+      <br>
+      <font size="2">Hi all this is a small version of my Basic Script Language.<br>
+      This project is meant as a learning tool for beginners that would like to 
+      know how to build a simple little scripting language. <br>
+      Unlike my other scripting submissions such as DM++ and Little# Interpreter. 
+      I am going to break this project down into small, Parts each couple of weeks. 
+      So you can get an idea of how each project is working. And also maybe add 
+      in your own parts as this series continues. </font></font> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">For the scripting 
+        language I will try and focus it on the Qbasic language, as this is a 
+        nice and easy language to understand. I will attempt to cover most of 
+        the Basic and add in some other interesting features along the way. At 
+        the end you should at least have a small scripting language be able to 
+        write small applications that are useful.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Note I commented 
+        each of the functions and subs to give you an idea of what the code is 
+        doing. All code, functions and sub are in module files. As our project 
+        will grow over time. And we don't want to be editing one file with 1000s 
+        of lines of code.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        Now below is a small list of things we will be covering in the up coming 
+        versions of the projects,</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Adding Variables, 
+        Const, System variables data types, Arrays<br>
+        Adding Control flow, IF, SELECT CASE, FOR, WHILE DO LOOPS<br>
+        Adding support for the use of module files.<br>
+        Adding inbuilt functions, string functions, math functions, etc<br>
+        Adding support for File/IO<br>
+        Introducing the use of Pointers<br>
+        Building a merge tool to append our scripts to an exe</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Some more 
+        advanced stuff I may cover.</b><br>
+        <br>
+        Building a converter that will convert our script to ASM or MSIL<br>
+        Building a byte code compiler. We may do this in C Cross-platform sound 
+        good</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Well that 
+        just a quick list of some things we may get around to. In the coming versions<br>
+        </font></p>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">Ok what have 
+      we got in version 1 so far.</font><br>
+      <font face="Verdana, Arial, Helvetica, sans-serif"> </font></div>
+    <hr size="1" align="left">
+    <font face="Verdana, Arial, Helvetica, sans-serif"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a name="Key"></a></font><font size="3">Keywords</font></b> 
+    <a href="#top"><font size="1" face="Geneva, Arial, Helvetica, san-serif">Top</font></a> 
+    <br>
+    <font size="2">In a any programming language wherever it be scripting or a 
+    real compiled language such as C++. A keyword is a special word that is used 
+    to carry our and operation this might be to copy a file or just print text 
+    to the console.</font></font> 
+    <p><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">DIM<br>
+      REM <br>
+      CLS<br>
+      PRINT<br>
+      INPUT<br>
+      BEEP<br>
+      PAUSE<br>
+      LET<br>
+      LOCATE<br>
+      END</font></b><br>
+      </font></p>
+    <hr size="1" align="left">
+    <font face="Verdana, Arial, Helvetica, sans-serif"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a name="DataTypes"></a></font><font size="3">Data 
+    Types</font><font size="4"> </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#top"><font size="1" face="Geneva, Arial, Helvetica, san-serif">Top</font></a></font><font size="4"><br>
+    </font></b><font size="2">In programming languages we use data types that 
+    are known as variables. That is space in the computer memory to store various 
+    data. Out language at the moment can support 3 types. See below:<br>
+    <br>
+    1. Integer<br>
+    2. String<br>
+    3. Varient<br>
+    <br>
+    The </font><font face="Verdana, Arial, Helvetica, sans-serif"><font size="2"><b>Integer</b></font></font><font size="2"> 
+    Datatype is used to store only numeric data eg as 0..9<br>
+    The </font><font face="Verdana, Arial, Helvetica, sans-serif"><font size="2"><b>String</b></font></font><font size="2"> 
+    Datatype can be used to store string data. eg &quot;this is a string&quot; 
+    or &quot;125&quot; incolosed in quotes &quot;<br>
+    <br>
+    The Variant Data type is capable of storing any sort of data include String, 
+    Integer and floating point numbers. However in our language each data type 
+    is in fact of type Variant. Though this is hidden from the user. Though the 
+    user of conversion functions allow us to use such data types as Integer and 
+    String to obtain the same result.</font><font size="2"><br>
+    <br>
+    </font></font> 
+    <hr size="1" align="left">
+    <font face="Verdana, Arial, Helvetica, sans-serif"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a name="Guide"></a></font><font size="3">Quick 
+    Guide Keywords</font><font size="4"> </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#top"><font size="1" face="Geneva, Arial, Helvetica, san-serif">Top</font></a></font><font size="4"><br>
+    <br>
+    <font size="2">Keyword DIM: &lt;VarName&gt; [VarDatType]</font></font></b> 
+    </font> 
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The Dim keyword 
+      is used to allow you to create a variable in the computers memory to store 
+      data. Note <b>[VarDatType]</b> here you should place here your data type. 
+      See data types above. If <b>[VarDatType]</b> is left empty your variable 
+      is assumed to be of type Variant.</font></p>
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Examples:<br>
+      DIM Name As String<br>
+      DIM Age As Integer<br>
+      DIM Other &lt;-- Varian</font></p>
+    <hr size="1" align="left">
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Keyword REM:<br>
+      REM keyword is used to add comments to your program. To help you remember 
+      what the code is about.</font></p>
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Example:<br>
+      REM This prints the value of 5 and 6<br>
+      PRINT 5+6<br>
+      REM Add other comments here</font></p>
+    <hr size="1" align="left">
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+    <b>Keyword CLS:</b><br>
+    CLS is used to clear the console window of it's data</font> 
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Example:<br>
+      PRINT &quot;Some Text&quot;<br>
+      CLS<br>
+      PRINT &quot;In this example you never see the top line&quot;</font></p>
+    <hr size="1" align="left">
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+    <b>Keyword PRINT: Expression</b><br>
+    Prints data to the console.</font> 
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Examples:<br>
+      PRINT &quot;HI String&quot;<br>
+      PRINT 5+4<br>
+      PRINT A+B<br>
+      PRINT &quot;Hello String &quot; &amp; (5.6+5.6)</font></p>
+    <hr size="1" align="left">
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+    <b>Keyword INPUT: [Prompt], Variable</b><br>
+    Takes input from the console. And stores the result in to Variable.<br>
+    Prompt Allows you to display a message on the console.</font> 
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Example:<br>
+      DIM NAME AS STRING<br>
+      INPUT &quot;What is Your Name&quot;,Name<br>
+      PRINT &quot;HELLO &quot; &amp; Name</font></p>
+    <hr size="1" align="left">
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+    <b>Keyword BEEP:</b><br>
+    Send the Bell control chr 7 to the console to make the pc speaker Beep.</font> 
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Example:<br>
+      BEEP</font></p>
+    <hr size="1" align="left">
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+    <b>Keyword PAUSE:</b><br>
+    Pause is used to pause the console until a key is pressed.<br>
+    This comes in handy as the console can flash of quickly.</font> 
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Example:<br>
+      PRINT &quot;Pause&quot;<br>
+      PAUSE</font></p>
+    <hr size="1" align="left">
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+    <b>Keyword LET: &lt;Variable&gt;=&lt;Expression&gt;</b><br>
+    Allows the assignment of a expression to a variable.</font> 
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Example:<br>
+      Dim A<br>
+      Dim B as Integer<br>
+      DIM C<br>
+      LET A = &quot;Hello Number: &quot;<br>
+      LET B = 10<br>
+      LET C = A &amp; B<br>
+      PRINT C</font></p>
+    <hr size="1" align="left">
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Keyword 
+      LOCATE: &lt;Expression&gt;,&lt;Expression&gt;</b><br>
+      The locate keyword takes in two expressions and positions the cursor in 
+      the console based of the values.</font></p>
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Example:<br>
+      DIM A<br>
+      DIM B<br>
+      LET A = 20<br>
+      LET B = 1<br>
+      LOCATE 10,10<br>
+      PRINT &quot;A&quot;<br>
+      LOCATE A,B<br>
+      PRINT &quot;B&quot;<br>
+      </font></p>
+    <hr size="1" align="left">
+    <p></p>
+    <p><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Keyword 
+      END: </font></b><font size="2"><br>
+      Terminates the execution of a program and returns to the operating system.</font></font></p>
+    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Example:<br>
+      PRINT &quot;Hello&quot;<br>
+      PAUSE<br>
+      END<br>
+      PRINT &quot;You will not see me because the program has ended&quot;<br>
+      </font> </p>
+    <hr size="1" align="left">
+    <font face="Verdana, Arial, Helvetica, sans-serif"><b><font face="Verdana, Arial, Helvetica, sans-serif"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a name="Run"></a></font></b></font><font size="3">Running 
+    the scripts </font><font face="Verdana, Arial, Helvetica, sans-serif"><a href="#top"><font size="1" face="Geneva, Arial, Helvetica, san-serif">Top</font></a></font><font size="3"><br>
+    </font></b><font size="2">There are two ways in witch you can execute the 
+    scripts. The first is by using the integrated IDE. The next method is by using 
+    the engine.exe this can be done as follows <font color="#0033FF">engine.exe 
+    scriptfile.myb</font></font></font><br>
+    <hr size="1" align="left">
+    <font face="Verdana, Arial, Helvetica, sans-serif"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a name="NextVer"></a></font><font size="3">Next 
+    Version </font></b><a href="#top"><font size="1" face="Geneva, Arial, Helvetica, san-serif">Top</font></a><b><br>
+    </b></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Checking 
+    for valid and invalid Variables names.<br>
+    Adding new variable datat Types Long, Double, Boolean<br>
+    Allowing variables to be assigned data without the LET keyword<br>
+    </font> <font face="Verdana, Arial, Helvetica, sans-serif" size="2">Adding 
+    the const keyword<br>
+    Adding in built functions<br>
+    Adding a compiler that will attach our script to the back of the script engine.</font><font face="Verdana, Arial, Helvetica, sans-serif"><b><br>
+    <br>
+    <font size="1">Note All examples to the keywords are also with this version</font><br>
+    </b></font> 
+    <hr size="1" align="left">
+    <p><font face="Verdana, Arial, Helvetica, sans-serif"><b> </b> </font> 
+  </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Compiling the project.
+
+Open Visual Basic or double click Make.vbg. Once in VB File->Make Project Group
+This will then create devEnv.exe in this folder.
+and also engine\engine.exe
+
+That’s it your finished.
+Note docs\doc.htm for more information the project. 
+This is also viewable from the IDE.
+
+Next update should be in one or two days. Until then have fun.
+Questions commenets to vbdream2k@yahoo.com
+
+Last-update
+4:09 AM 5/6/2005

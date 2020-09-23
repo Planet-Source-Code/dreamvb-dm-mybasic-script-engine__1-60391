@@ -1,0 +1,3 @@
+VBGROUP 5.0
+StartupProject=IDE.vbp
+Project=engine\engine.vbp
