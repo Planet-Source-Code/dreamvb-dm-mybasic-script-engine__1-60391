@@ -1,0 +1,12 @@
+REM Input Example
+DIM Name As String
+DIM Age As Integer
+INPUT "What is your name",Name
+CLS
+INPUT "How old are you" & Name,Age
+CLS
+BEEP
+PRINT "Hello" & Name
+PRINT "You are" & Age & " Years old today"
+PAUSE
+END
